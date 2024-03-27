@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Main-div {
   display: flex;
-  flex-direction: column;
+  background-color: black;
+  width: auto;
+  height: 90vh;
+}
+
+.First-div {
+  /* background-color: black; */
+  background-color: rgb(77, 77, 77);
+  /* background-color: brown; */
+  width: 300px;
+  height: 120px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.Second-div {
+  /* background-color: black; */
+  width: 300px;
+  background-color: rgb(77, 77, 77);
+  height: 403px;
+  overflow-y: hidden;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: white;
+  padding-left: 10px;
+
+}
+
+.top {
+  background-color: green;
+  /* background-color: black; */
+  height: 230px;
+  width: 1020px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  /* padding-left: 15px; */
+
+}
+.first-top{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* margin-top: 30px; */
+}
+
+#arrowback{
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  width: fit-content;
+  border: none;
+  padding: auto;
+  margin-top: 15px;
+  margin-left: 15px;
+
+}
+.premium{
+  background-color: white;
+  color: black;
+  width: 170px;
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 15px;
+  margin-left: 580px;
+}
+.app{
+  background-color: black;
+  color: white;
+  width: 150px;
+  padding-left: 15px;
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.two-btn {
+  display: flex;
+  align-items: center;
+  margin-left: 14px;
+
+}
+.three-btn {
+  display: flex;
+  align-items: center;
+  margin-left: 14px;
+  margin-top: 20px;
+
+}
+.tza{
+  display: flex;
+  align-items: center;
+  width: 240px;
+  height: 45px;
+  background-color: rgb(179, 179, 179);
+  margin-left: 14px;
+  margin-top: 20px;
+  /* border-radius: 20px; */
+  padding: auto;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.made{
+  color: white;
+  margin-left: 14px;
+  margin-top: 20px;
+}
+.tza img{
+  height: 45px;
+  /* border-radius: 20px;
+  padding-left: 20px; */
+}
+.tza p{
+  padding-left: 17px;
+  padding-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.two-btn button {
+  background-color:  rgb(179, 179, 179);
+  width: 70px;
+  color: white;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+.all {
+  background-color: white;
+  width: 50px;
+  color: rgb(179, 179, 179);
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+.music{
+  margin-left: 4px;
+  width: 70px;
+  background-color: rgb(179, 179, 179);
+  color: white;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+.artists{
+  margin-left: 4px;
+}
+.altogether{
+  display: flex;
+  align-items: center;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.firstdiv-part {
+  display: flex;
+  color: white;
+  padding-top: 20px;
+  margin-left: 14px;
+
+}
+.firstdiv-part p {
+  margin-left: 20px;
+}
+
+.firstdiv-parttwo {
+  display: flex;
+  color: rgb(179, 179, 179);
+  margin-top: 15px;
+  margin-left: 14px;
+}
+.firstdiv-parttwo p {
+  margin-left: 20px;
+}
+
+.seconddivart {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-top: 10px;
+  margin-left: 14px;
+}
+.seconddivart-img{
+  height: 50px;
+  border-radius: 50px
+}
+.seconddivart-p{
+  margin-left: 20px;
+}
+.library{
+  display: flex;
+  color: rgb(179, 179, 179);
+  margin-left: 14px;
+  margin-top: 20px;
+}
+#add {
+  margin-left: 45px;
+}
+.library p{
+  margin-left: 15px;
+}
+.recents{
+  display: flex;
+  /* align-items: 'center'; */
+  color: rgb(179, 179, 179);
+  margin-left: 14px;
+  margin-top: 20px;
+
+}
+.recents p{
+  margin-left: 145px;
+}
+#added {
+  margin-left: 10px;
+}
+.lastdiv{
+  background-color: black;
+  width: 100vw;
+  height: 50px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; */
+}
+.lastdiv-first{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* align-items: center; */
+}
+#volume{
+  padding-left: 30px;
+}
+.range{
+  width: 300px;
+  margin-left: 500px;
+  margin-top: 10px;
 }
