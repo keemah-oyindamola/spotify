@@ -6,11 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'font-awesome/css/font-awesome.min.css';
 import reportWebVitals from './reportWebVitals';
+import Spotify from './Spotify';
+import Spotify2 from './Spotify2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Spotify2/>
+    {/* <App /> */}
+    {/* <Spotify/> */}
   </React.StrictMode>
 );
 

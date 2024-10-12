@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './Spotify.css'
 import Button from './Button';
 import images from './download (1).jpg';
 import imagess from './download.jpg';
@@ -7,64 +7,34 @@ import imagg from './ab67616100005174d780318487f3fad6bec36086.jpg';
 import photo from './ab67616100005174e12972169702affd7a4c48ec.jpg';
 import pic from './images.jpg';
 import axios from 'axios';
-// import { click } from '@testing-library/user-event/dist/click';
-// import { AiFillHome } from "react-icons/ai";
 
-function App() {
+const Spotify = () => {
   const [music, setmusic] = useState([])
-  const [next, setnext] = useState({})
+  const lol = document.getElementById("lol")
+  const myaudio = document.getElementById("myaudio")
 
-  const playSong = () => {
-    axios.get('https://robo-music-api.onrender.com/music/my-api')
-      .then((res) => {
-        console.log(res.data);
-        setmusic(res.data)
-        // console.log(music);
-      }).catch((error) => {
-        console.log(error);
-      })
-    let lol = document.getElementById("lol")
-    let stop_music = `<span onClick={stopMu} class="material-symbols-outlined">pause_circle</span>`
-    lol.innerHTML = stop_music
-    // stop_music.addEventListener('click',()=>{
-    //   axios.get('')
-    // })
-
-
-  }
-  const Nextsong = () => {
-    axios.get('https://robo-music-api.onrender.com/music/my-api')
+  useEffect(() => {
+    axios.get("https://robo-music-api.onrender.com/music/my-api")
       .then((res) => {
         console.log(res.data);
         setmusic(res.data)
       }).catch((error) => {
         console.log(error);
       })
+  }, [])
+
+  const playMusic = (i) => {
+    const audio = new Audio(music[i].songUrl)
+    audio.play()
+    lol.innerHTML = `<span class="material-symbols-outlined">pause_circle</span>`
   }
-    useEffect(() => {
-      setnext(next)
-      axios.get('https://robo-music-api.onrender.com/music/my-api')
-      .then((res)=>{
-        console.log(res.data);
-        setmusic(res.data)
-        // console.log(music);
-      }).catch((error)=>{
-        console.log(error);
-      })
 
-  }, [next])
-
-  // const Nextsong = (el)=>{
-  //   console.log(el.id.albumName);
-  //   // let id = el.id
-  //   // setmusic(id)
-  // }
-  let data = [
-    { photo: images, content: 'Artist', nameof: 'KimTaehyung' },
-    { photo: imagg, content: 'Artist', nameof: 'Tatiana' },
-    { photo: photo, content: 'Artist', nameof: 'MAMAAOO' },
-    { photo: imagess, content: 'Artist', nameof: 'Jimin' }
-  ]
+  const nextmusic = (index) => {
+    const nexting = index++
+    playMusic([nexting])
+    // const next = new Audio(music[nexting].songUrl)
+    // next.play()
+  }
   return (
     <>
       <div className='Main-div'>
@@ -146,19 +116,10 @@ function App() {
             <h1 className='made'>Made For Hikmotbolanle</h1>
           </div>
           <div style={{ display: 'flex', }}>
-            {data.map((el, i) => (
-              <>
-                <div>
-                <Button theimage={el.photo} content={el.content} nameof={el.nameof} />
-
-                </div>
-              </>
-            ))
-            }
-            {/* <Button theimage={images} content={'Artist'} nameof={'KimTaehyung'} />
+            <Button theimage={images} content={'Artist'} nameof={'KimTaehyung'} />
             <Button theimage={imagg} content={'Artist'} nameof={'Tatiana'} />
             <Button theimage={photo} content={'Artist'} nameof={'MAMAAOO'} />
-            <Button theimage={imagess} content={'Artist'} nameof={'Jimin'} /> */}
+            <Button theimage={imagess} content={'Artist'} nameof={'Jimin'} />
           </div>
 
         </div>
@@ -167,20 +128,21 @@ function App() {
       <div className='lastdiv'>
         <div className='lastdiv-first'>
           <span class="material-symbols-outlined">skip_previous</span>
-          <span onClick={playSong} id='lol' class="material-symbols-outlined">play_circle</span>
-          <span onClick={Nextsong} class="material-symbols-outlined">skip_next</span>
-          {/* <span onClick={(()=>setnext(next + 1))} class="material-symbols-outlined">skip_next</span> */}
+          <span onClick={() => playMusic()} id='lol' class="material-symbols-outlined">play_circle</span>
+          <span onClick={() => nextmusic(0)} class="material-symbols-outlined">skip_next</span>
           <span id='volume' class="material-symbols-outlined">volume_up</span>
         </div>
         <input className='range' type="range" />
-        {music.map((el) => (
-          <>f
-            <div>
-              <audio autoPlay src={el.songUrl}></audio>
-              {/* <span onClick={(()=>setnext(next + 1))} class="material-symbols-outlined">skip_next</span> */}
-            </div>
+        {/* {
+        music.map((el)=>(
+          <>
+          <div className='d-flex'>
+            <img src={el.songImage} alt="" />
+            <p>{el.albumName}</p>
+          </div>
           </>
-        ))}
+        ))
+      } */}
       </div>
 
 
@@ -189,4 +151,4 @@ function App() {
   );
 }
 
-export default App;
+export default Spotify
